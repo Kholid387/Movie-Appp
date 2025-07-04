@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Navbar from "../components/navbar/Navbar";
+import Navbar from "../components/navbar/MyNavbar";
 import Hero from '../components/Hero/Hero';
 import Footer from '../components/footer/Footer';
 import Movies from '../components/Movies/Movies';
@@ -26,7 +26,7 @@ function Home({movies}) {
                 <Movies title="lates Movie" movies={movies}/>
                 {/* <AddMovieForm movies={movies} setMovies={setMovies} /> */}
                 {/* <Counter /> */}
-                
+
             </main>
             {/* <Footer /> */}
         </div>
