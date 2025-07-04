@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Navbar from '../components/navbar/navbar';
+import Navbar from "../components/navbar/Navbar";
 import Hero from '../components/Hero/Hero';
-import Footer from '../components/Footer/Footer';
+import Footer from '../components/footer/Footer';
 import Movies from '../components/Movies/Movies';
 import Counter from '../components/Counter';
 import AddMovieForm from '../components/AddMovie/AddMovie';
@@ -16,7 +16,8 @@ function Home({movies}) {
     // const [movies] = useState(data);
     return(
         <div>
-            {/* <Navbar /> */}
+           <Navbar />
+
             <main>
                 <Hero />
                 {/* <Button variant="primary">Lihat</Button>
