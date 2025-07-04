@@ -26,6 +26,7 @@ function Home({movies}) {
                 <Movies title="lates Movie" movies={movies}/>
                 {/* <AddMovieForm movies={movies} setMovies={setMovies} /> */}
                 {/* <Counter /> */}
+                
             </main>
             {/* <Footer /> */}
         </div>
