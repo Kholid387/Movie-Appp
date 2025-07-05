@@ -1,6 +1,6 @@
 
-import Navbar from "../components/navbar/MyNavbar.jsx"
-
+// ✅ Alternatif lain
+import Navbar from "../components/navbar/MyNavbar"
 import Footer from "../components/footer/Footer";
 
 function Layout ({children}) {
