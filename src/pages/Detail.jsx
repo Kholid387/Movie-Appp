@@ -1,41 +1,45 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Button from "../components/UI/button/Index";
-import StyledDetailMovie from "../components/UI/Button/DetailMovie.styled";
+import Button from "../components/Button/Index";
+import StyledDetailMovie from "../components/Button/DetailMovie.styled";
+
 function DetailMovie() {
-  const {id} = useParams();
   const [movie, setMovie] = useState({});
+  const { id } = useParams();
 
-useEffect(() => {
+  useEffect(() => {
+    getDetailMovie();
+  }, []);
+
   async function getDetailMovie() {
-    const API_KEY = import.meta.env.VITE_API_KEY;
-    const params = `?api_key=${API_KEY}&append_to_response=videos`;
-    const URL = `https://api.themoviedb.org/3/movie/${id}${params}`;
-    const response = await axios(URL);
-    setMovie(response.data);
+    try {
+      const response = await axios.get(
+        `https://www.omdbapi.com/?apikey=1e58d29&i=${id}`
+      );
+      setMovie(response.data);
+    } catch (error) {
+      console.error("Gagal fetch data movie:", error);
+    }
   }
-  getDetailMovie();
-}, [id]); // <- id harus masuk dependency biar aman
 
+  // ✅ Tambahan pengecekan sebelum render
+  if (!movie || !movie.Title) {
+    return <p>Loading movie detail...</p>;
+  }
 
   return (
-    <>
-      {/* <h2>Detail Movie ID: {Params.id} </h2> */}
-      <StyledDetailMovie>
-      <div>
-        <img
-          src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-          
-        />
+    <StyledDetailMovie>
+      <div className="poster">
+        <img src={movie.Poster} alt={movie.Title} />
       </div>
-      <div>
-        <h2>{movie.title}</h2>
-        <p>{movie.overview}</p>
-        <Button>Watch</Button>
+      <div className="info">
+        <h2>{movie.Title}</h2>
+        <h3>{movie.Year} • {movie.Runtime}</h3>
+        <p>{movie.Plot}</p>
+        <Button variant="primary">Watch Now</Button>
       </div>
-      </StyledDetailMovie>
-    </>
+    </StyledDetailMovie>
   );
 }
 
