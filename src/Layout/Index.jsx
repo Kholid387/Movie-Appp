@@ -1,7 +1,5 @@
-
-// ✅ Alternatif lain
-import Navbar from "../components/navbar/MyNavbar"
-import Footer from "../components/footer/Footer";
+import Navbar from "../components/navbar/MyNavbar.jsx"; // ← .jsx WAJIB disebut
+import Footer from "../components/footer/Footer.jsx";   // ← .jsx WAJIB disebut
 
 function Layout ({children}) {
     return(
