@@ -1,7 +1,7 @@
 import { useState } from "react";
 //import Navbar from "../components/navbar/MyNavbar";
 import Hero from '../components/Hero/Hero';
-import Footer from '../components/footer/Footer';
+
 import Movies from '../components/Movies/Movies';
 import Counter from '../components/Counter';
 import AddMovieForm from '../components/AddMovie/AddMovie';
