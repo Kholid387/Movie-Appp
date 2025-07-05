@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Navbar from "../components/navbar/MyNavbar";
+//import Navbar from "../components/navbar/MyNavbar";
 import Hero from '../components/Hero/Hero';
 import Footer from '../components/footer/Footer';
 import Movies from '../components/Movies/Movies';
@@ -16,7 +16,6 @@ function Home({movies}) {
     // const [movies] = useState(data);
     return(
         <div>
-           <Navbar />
 
             <main>
                 <Hero />
